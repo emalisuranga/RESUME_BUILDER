@@ -1,7 +1,7 @@
 <template>
     <header class="custom-header">
       <div class="logo">
-        <span class="logo-text">Pro Test</span>
+        <span class="logo-text">Jack Pod</span>
       </div>
     </header>
 </template>
