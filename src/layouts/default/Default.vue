@@ -4,12 +4,14 @@
     <default-bar />
 
     <default-view />
+    <!-- <MainStepper2 /> -->
   </v-app>
 </template>
 
 <script setup>
 import DefaultBar from './AppBar.vue'
 import DefaultView from './View.vue'
+import MainStepper2 from '@/components/MainStepper2.vue'
 </script>
 
 <style scoped>

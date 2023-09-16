@@ -1,27 +1,39 @@
 <template>
-    <div class="form-section__content">
-        <h3 class="text-h6">Personal details</h3>
-        <div class="form-section__language-selector">
-            <v-select class="custom-v-select" v-model="selectedLanguage" :items="languageOptions" label="Resume language"
-                outlined></v-select>
-        </div>
-    </div>
-
-    <br>
-
-
-    <v-sheet width="800" class="mx-auto form-section">
-
-        <div>
-            <v-form fast-fail @submit.prevent>
-                <v-text-field v-model="firstName" label="First name" :rules="firstNameRules"></v-text-field>
-
-                <v-text-field v-model="lastName" label="Last name" :rules="lastNameRules"></v-text-field>
-
-                <v-btn type="submit" block class="mt-2">Submit</v-btn>
-            </v-form>
-        </div>
-
+    <v-sheet width="800" class="custom-sheet">
+        <v-form ref="personalForm" @submit.prevent>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <div class="form-field">
+                        <v-text-field class="text-field" v-model="firstName" label="First name"
+                            :rules="firstNameRules"></v-text-field>
+                    </div>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <div class="form-field">
+                        <v-text-field class="text-field" v-model="lastName" label="Last name"
+                            :rules="lastNameRules"></v-text-field>
+                    </div>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-text-field v-model="firstName" label="First Name(Kana)" :rules="firstNameRules"></v-text-field>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-text-field v-model="lastName" label="Last Name(Kana)" :rules="lastNameRules"></v-text-field>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Gender"
+                        required></v-select>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Nationality"
+                        required></v-select>
+                </v-col>
+            </v-row>
+        </v-form>
     </v-sheet>
 </template>
 <script setup>
@@ -86,6 +98,25 @@ export default {
     padding-left: 400px;
     /* Adjust this value for larger screens */
 }
+
+/* .form-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.alert-icon {
+  margin-right: 10px;
+} */
+
+/* .text-field {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+} */
 
 
 /* .page__header {
