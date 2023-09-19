@@ -16,13 +16,13 @@
       <template v-slot:item.2>
         <v-sheet width="800" class="custom-sheet">
           <v-radio-group v-model="shipping" label="Delivery Method">
-          <v-radio label="Standard Shipping" value="5"></v-radio>
-          <v-radio label="Priority Shipping" value="10"></v-radio>
-          <v-radio label="Express Shipping" value="15"></v-radio>
-        </v-radio-group>
+            <v-radio label="Standard Shipping" value="5"></v-radio>
+            <v-radio label="Priority Shipping" value="10"></v-radio>
+            <v-radio label="Express Shipping" value="15"></v-radio>
+          </v-radio-group>
         </v-sheet>
 
-        
+
       </template>
 
       <template v-slot:item.3>
@@ -64,12 +64,15 @@
           </v-table>
         </v-sheet>
       </template>
-      <v-stepper-content>
-        <div class="button-container">
-          <v-btn text @click="curr = n" class="left-button">Back</v-btn>
-          <v-btn color="primary" @click="validateAndNext" class="right-button">Continue</v-btn>
-        </div>
-      </v-stepper-content>
+      <v-stepper-items>
+        <v-stepper-content>
+          <div class="button-container">
+            <v-btn text @click="validateAndBack" class="left-button">Back</v-btn>
+            <v-btn color="primary" @click="validateAndNext" class="right-button">Continue</v-btn>
+          </div>
+        </v-stepper-content>
+      </v-stepper-items>
+
     </v-stepper>
 
   </div>
@@ -91,18 +94,6 @@ export default {
       'Skills',
       'Info',
     ],
-    products: [
-      {
-        name: 'Product 1',
-        price: 10,
-        quantity: 2,
-      },
-      {
-        name: 'Product 2',
-        price: 15,
-        quantity: 10,
-      },
-    ],
   }),
 
   computed: {
@@ -122,6 +113,9 @@ export default {
       if (this.isPersonalFormValid) {
         this.step += 1;
       }
+    },
+    validateAndBack() {
+      this.step -= 1;
     },
   },
 }
@@ -174,7 +168,7 @@ export default {
 }
 
 .custom-sheet {
-  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07)!important;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
 }
 </style>
 

@@ -1,12 +1,43 @@
 <template>
-    <header class="custom-header">
-      <div class="logo">
-        <span class="logo-text">Jack Pod</span>
-      </div>
-    </header>
+  <header class="custom-header">
+    <div class="logo">
+      <span class="logo-text">Jack Pod</span>
+    </div>
+
+    <v-menu>
+      <template v-slot:activator="{ props }" >
+        <v-btn class="custom-menu" icon="mdi-translate" v-bind="props"></v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item v-for="(item, i) in items" :key="i" @click="selectItem(item)">
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+  </header>
 </template>
 
-<style>
+<script>
+export default {
+  data: () => ({
+    shipping: 0,
+    dropdown: false,
+    step: 1,
+    items: [
+      { title: 'English' },
+      { title: 'Japanese' }
+    ],
+  }),
+  methods: {
+    selectItem(item) {
+      console.log('Clicked:', item);
+    },
+  }
+}
+</script>
+
+<style scoped>
 .custom-header {
   background-color: #2dc46a;
   color: white;
@@ -19,16 +50,18 @@
 
 .logo img {
   width: 40px;
-  /* Adjust the width as needed */
   height: auto;
-  /* Maintain aspect ratio */
   margin-right: 10px;
 }
 
 .logo-text {
   font-size: 24px;
-  /* Default font size for larger screens */
   font-weight: bold;
+}
+
+.custom-menu {
+  max-width: 200px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
