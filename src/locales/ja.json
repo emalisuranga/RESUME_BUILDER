@@ -1,0 +1,12 @@
+{
+    "firstNameLabel": "名",
+    "lastNameLabel": "姓",
+    "firstNameKanaLabel": "名（カナ）",
+    "lastNameKanaLabel": "姓（カナ）",
+    "genderLabel": "性別",
+    "nationalityLabel": "国籍",
+    "genderRequiredError": "性別は必須です",
+    "nationalityRequiredError": "国籍は必須です",
+    "submitButtonText": "送信"
+  }
+  

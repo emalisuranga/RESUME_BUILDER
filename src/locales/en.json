@@ -1,0 +1,13 @@
+{
+  "firstNameLabel": "First Name",
+  "lastNameLabel": "Last Name",
+  "firstNameKanaLabel": "First Name (Kana)",
+  "lastNameKanaLabel": "Last Name (Kana)",
+  "genderLabel": "Gender",
+  "nationalityLabel": "Nationality",
+  "genderRequiredError": "Gender is required",
+  "nationalityRequiredError": "Nationality is required",
+  "submitButtonText": "Submit",
+  "firstNameLengthError": "First name must be at least 3 characters.",
+  "lastNameDigitError": "Last name cannot contain digits."
+}

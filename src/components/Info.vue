@@ -4,7 +4,7 @@
             <v-row>
                 <v-col cols="12" md="6">
                     <div class="form-field">
-                        <v-text-field class="text-field" v-model="firstName" label="First name"
+                        <v-text-field class="text-field" v-model="firstName" :label="$t('firstNameLabel')"
                             :rules="firstNameRules"></v-text-field>
                     </div>
                 </v-col>
